@@ -8,12 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Unzip project
-        run:  unzip -o ./*.zip
+        run: unzip -o ./*.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
-      - uses: android-actions/setup-android@v3
+      - name: Accept licenses
+        run: yes | sdkmanager --licenses || true
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.5
