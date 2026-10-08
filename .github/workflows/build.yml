@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Unzip project
-        run: unzip -o SpiderApp.zip
+        run:  unzip -o ./*.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
